@@ -19,8 +19,9 @@ body {
 .carousel {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 400px;
+    height: 80vh;
+    min-height: 650px;
+    max-height: 900px;
     overflow: hidden;
     background: #111;
 }
@@ -32,9 +33,9 @@ body {
     width: calc(100% + 60px);
     height: calc(100% + 60px);
     object-fit: cover;
-    filter: blur(28px);
+    filter: blur(25px) brightness(0.55);
     transform: scale(1.08);
-    opacity: 0.55;
+    opacity: 0.72;
     transition: opacity 0.6s ease;
 }
 
@@ -42,7 +43,7 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.22);
+    background: rgba(0, 0, 0, 0.18);
 }
 
 /* Main photo */
@@ -68,15 +69,15 @@ button {
     z-index: 4;
     top: 50%;
     transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     padding: 0;
     border: none;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.45);
     color: white;
-    font-size: 28px;
-    line-height: 48px;
+    font-size: 25px;
+    line-height: 44px;
     cursor: pointer;
     opacity: 0.75;
     transition:
@@ -109,6 +110,8 @@ button:hover {
 }
 
 .dot {
+    position: static;
+    transform: none;
     width: 9px;
     height: 9px;
     padding: 0;
@@ -125,14 +128,16 @@ button:hover {
 
 @media (max-width: 600px) {
     .carousel {
-        min-height: 300px;
+        height: 75vh;
+        min-height: 500px;
+        max-height: 800px;
     }
 
     button {
-        width: 42px;
-        height: 42px;
-        font-size: 24px;
-        line-height: 42px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        line-height: 40px;
     }
 
     .prev {
@@ -141,6 +146,16 @@ button:hover {
 
     .next {
         right: 10px;
+    }
+
+    .dots {
+        bottom: 12px;
+        gap: 6px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
     }
 }
 </style>
@@ -153,7 +168,7 @@ button:hover {
     <img
         class="background-image"
         id="backgroundImage"
-        src="images/Salmon-Crudo-2-1024x1536.jpg"
+        src="images/photo1.jpg"
         alt=""
         aria-hidden="true"
     >
@@ -163,7 +178,7 @@ button:hover {
     <img
         class="main-image"
         id="mainImage"
-        src="images/Salmon-Crudo-2-1024x1536.jpg"
+        src="images/photo1.jpg"
         alt="Restaurant food photo"
     >
 
